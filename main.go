@@ -17,8 +17,8 @@ func main() {
 
 	attendance := r.Group("/api/v1/attendance")
 	{
-		attendance.POST("/check-in", attendanceController.AttendeeCheckIn)
-		attendance.POST("/check-out", attendanceController.AttendeeCheckOut)
+		attendance.POST("/check-in", attendanceController.AttendanceCheckIn)
+		attendance.POST("/check-out", attendanceController.AttendanceCheckOut)
 	}
 
 	r.Run(":8080")

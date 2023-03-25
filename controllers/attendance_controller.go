@@ -19,7 +19,7 @@ func NewAttendanceController(frService services.FaceRecognitionService, glServic
 	return &attendanceController{frService, glService}
 }
 
-func (h *attendanceController) AttendeeCheckIn(c *gin.Context) {
+func (h *attendanceController) AttendanceCheckIn(c *gin.Context) {
 	var req models.AttendanceRequest
 
 	if err := c.ShouldBindJSON(&req); err != nil {
@@ -64,7 +64,7 @@ func (h *attendanceController) AttendeeCheckIn(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-func (h *attendanceController) AttendeeCheckOut(c *gin.Context) {
+func (h *attendanceController) AttendanceCheckOut(c *gin.Context) {
 	var req models.AttendanceRequest
 
 	if err := c.ShouldBindJSON(&req); err != nil {
